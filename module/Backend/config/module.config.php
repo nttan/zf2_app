@@ -63,7 +63,8 @@ return array(
 //    ),
     'controllers' => array(
         'invokables' => array(
-            'Backend\Controller\Index' => 'Backend\Controller\IndexController'
+            'Backend\Controller\Index' => 'Backend\Controller\IndexController',
+            'Backend\Controller\User' => 'Backend\Controller\UserController'
         ),
     ),
     'view_manager' => array(
@@ -73,7 +74,7 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-//            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'backend/index/index' => __DIR__ . '/../view/backend/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
@@ -81,12 +82,5 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
-    ),
-    // Placeholder for console routes
-//    'console' => array(
-//        'router' => array(
-//            'routes' => array(
-//            ),
-//        ),
-//    ),
+    )
 );

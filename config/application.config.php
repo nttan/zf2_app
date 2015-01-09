@@ -7,10 +7,13 @@
  */
 return array(
     'modules' => array(
+        /* thirdparties */
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'DoctrineDataFixtureModule',
+        /* my application */
         'Application',
-        'Demo',
-        'Backend',
-        'Frontend'
+        'Backend'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
@@ -19,6 +22,12 @@ return array(
         ),
         'config_glob_paths' => array(
             'config/autoload/{,*.}{global,local}.php'
+        )
+    ),
+
+    'doctrine' => array(
+        'fixture' => array(
+            'ModuleName_fixture' => __DIR__ . '/../src/ModuleName/Fixture',
         )
     )
 );
