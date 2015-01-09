@@ -1,3 +1,22 @@
-Module: Backend
-Controller: User
-Action: list
+<h1>Index = Retrieve</h1>
+<a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'insert')); ?>">Create</a>
+<table>
+    <tr>
+        <th>#ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+    </tr>
+    <?php
+    foreach ($users as $user) {
+        ?>
+        <tr>
+            <td><?php  echo $user->getID(); ?></td>
+            <td><?php  echo $user->getFullName(); ?></td>
+            <td><?php  echo $user->getEmail(); ?></td>
+            <td><a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'update', 'id' => $user->getID())); ?>">Edit</a></td>
+            <td><a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'delete', 'id' => $user->getID()));?>" onclick="return confirm('Do you rely want to delete the record;')">Delete</a></td>
+        </tr>
+    <?php
+    }
+    ?>
+</table>
