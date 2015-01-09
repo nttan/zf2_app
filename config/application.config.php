@@ -8,7 +8,9 @@
 return array(
     'modules' => array(
         'Application',
-        'Demo'
+        'Demo',
+        'Backend',
+        'Frontend'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
